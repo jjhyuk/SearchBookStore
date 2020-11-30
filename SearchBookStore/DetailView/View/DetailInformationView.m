@@ -49,61 +49,62 @@
   [self.detailTitleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
   [self.detailTitleLabel setFont:[UIFont boldSystemFontOfSize:24.0f]];
   [self.detailTitleLabel setNumberOfLines:3];
-  [self.detailTitleLabel setText:@"Title Label"];
+  [self.detailTitleLabel setText:@"Title"];
   [self.detailTitleLabel setLineBreakMode:NSLineBreakByWordWrapping];
   
   self.detailSubtitleLabel = [[UILabel alloc] init];
   [self.detailSubtitleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
   [self.detailSubtitleLabel setFont:[UIFont systemFontOfSize:16.0f]];
   [self.detailSubtitleLabel setTextColor:[UIColor darkGrayColor]];
-  [self.detailSubtitleLabel setText:@"Subtitle Label"];
+  [self.detailSubtitleLabel setText:@"Subtitle"];
   [self.detailSubtitleLabel setNumberOfLines:0];
   [self.detailSubtitleLabel setLineBreakMode:NSLineBreakByWordWrapping];
   
   self.detailAuthorsLabel = [[UILabel alloc] init];
   [self.detailAuthorsLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self.detailAuthorsLabel setText:@"Authors Label"];
+  [self.detailAuthorsLabel setText:@"Authors"];
   
   self.detailPublisherLabel = [[UILabel alloc] init];
   [self.detailPublisherLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self.detailPublisherLabel setText:@"Publisher Label"];
+  [self.detailPublisherLabel setText:@"Publisher"];
   
   self.detailLanguageLabel = [[UILabel alloc] init];
   [self.detailLanguageLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self.detailLanguageLabel setText:@"Language Label"];
+  [self.detailLanguageLabel setText:@"Language"];
   
   self.detailIsbn10Label = [[UILabel alloc] init];
   [self.detailIsbn10Label setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self.detailIsbn10Label setText:@"ISBN10 Label"];
+  [self.detailIsbn10Label setText:@"ISBN10"];
   
   self.detailIsbn10Label = [[UILabel alloc] init];
   [self.detailIsbn10Label setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self.detailIsbn10Label setText:@"ISBN10 Label"];
+  [self.detailIsbn10Label setText:@"ISBN10"];
   
   self.detailIsbn13Label = [[UILabel alloc] init];
   [self.detailIsbn13Label setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self.detailIsbn13Label setText:@"ISBN13 Label"];
+  [self.detailIsbn13Label setText:@"ISBN13"];
   
   self.detailPagesLabel = [[UILabel alloc] init];
   [self.detailPagesLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self.detailPagesLabel setText:@"Page Label"];
+  [self.detailPagesLabel setText:@"Page"];
   
   self.detailYearLabel = [[UILabel alloc] init];
   [self.detailYearLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self.detailYearLabel setText:@"Year Label"];
+  [self.detailYearLabel setText:@"Year"];
   
   self.detailRatingLabel = [[UILabel alloc] init];
   [self.detailRatingLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self.detailRatingLabel setText:@"Rating Label"];
+  [self.detailRatingLabel setText:@"Rating"];
   
   self.detailDescLabel = [[UILabel alloc] init];
   [self.detailDescLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self.detailDescLabel setText:@"DESC Label"];
+  [self.detailDescLabel setText:@"DESC"];
   [self.detailDescLabel setNumberOfLines:0];
   
   self.detailPriceLabel = [[UILabel alloc] init];
   [self.detailPriceLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self.detailPriceLabel setText:@"Price Label"];
+  [self.detailPriceLabel setText:@"Price"];
+  [self.detailPriceLabel setFont:[UIFont boldSystemFontOfSize:24.0f]];
   
   self.detailUrlButton = [[UIButton alloc] init];
   self.detailUrlButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -166,30 +167,72 @@
 //  [[self.detailLanguageLabel.trailingAnchor constraintEqualToAnchor:self.detailImageView.trailingAnchor] setActive:YES];
   [self.detailLanguageLabel sizeToFit];
   
+  
+  UILabel *isbn10 = [[UILabel alloc] init];
+  [isbn10 setTranslatesAutoresizingMaskIntoConstraints:NO];
+  [isbn10 setText:@"isbn10:"];
+  [self addSubview:isbn10];
+  [[isbn10.topAnchor constraintEqualToAnchor:self.detailLanguageLabel.bottomAnchor constant:4] setActive:YES];
+  [[isbn10.leadingAnchor constraintEqualToAnchor:self.detailImageView.leadingAnchor] setActive:YES];
+  [isbn10 sizeToFit];
+  
   [self addSubview:self.detailIsbn10Label];
   [[self.detailIsbn10Label.topAnchor constraintEqualToAnchor:self.detailLanguageLabel.bottomAnchor constant:4] setActive:YES];
-  [[self.detailIsbn10Label.leadingAnchor constraintEqualToAnchor:self.detailImageView.leadingAnchor] setActive:YES];
-  [[self.detailIsbn10Label.trailingAnchor constraintEqualToAnchor:self.detailImageView.trailingAnchor] setActive:YES];
+  [[self.detailIsbn10Label.leadingAnchor constraintEqualToAnchor:isbn10.trailingAnchor] setActive:YES];
+//  [[self.detailIsbn10Label.trailingAnchor constraintEqualToAnchor:self.detailImageView.trailingAnchor] setActive:YES];
+  [self.detailIsbn10Label sizeToFit];
+  
+  UILabel *isbn13 = [[UILabel alloc] init];
+  [isbn13 setTranslatesAutoresizingMaskIntoConstraints:NO];
+  [isbn13 setText:@"isbn13:"];
+  [self addSubview:isbn13];
+  [[isbn13.topAnchor constraintEqualToAnchor:self.detailIsbn10Label.bottomAnchor constant:4] setActive:YES];
+  [[isbn13.leadingAnchor constraintEqualToAnchor:self.detailImageView.leadingAnchor] setActive:YES];
+  [isbn13 sizeToFit];
   
   [self addSubview:self.detailIsbn13Label];
   [[self.detailIsbn13Label.topAnchor constraintEqualToAnchor:self.detailIsbn10Label.bottomAnchor constant:4] setActive:YES];
-  [[self.detailIsbn13Label.leadingAnchor constraintEqualToAnchor:self.detailImageView.leadingAnchor] setActive:YES];
-  [[self.detailIsbn13Label.trailingAnchor constraintEqualToAnchor:self.detailImageView.trailingAnchor] setActive:YES];
+  [[self.detailIsbn13Label.leadingAnchor constraintEqualToAnchor:isbn13.trailingAnchor] setActive:YES];
+  [self.detailIsbn13Label sizeToFit];
+  
+  UILabel *page = [[UILabel alloc] init];
+  [page setTranslatesAutoresizingMaskIntoConstraints:NO];
+  [page setText:@"page:"];
+  [self addSubview:page];
+  [[page.topAnchor constraintEqualToAnchor:self.detailIsbn13Label.bottomAnchor constant:4] setActive:YES];
+  [[page.leadingAnchor constraintEqualToAnchor:self.detailImageView.leadingAnchor] setActive:YES];
+  [page sizeToFit];
   
   [self addSubview:self.detailPagesLabel];
   [[self.detailPagesLabel.topAnchor constraintEqualToAnchor:self.detailIsbn13Label.bottomAnchor constant:4] setActive:YES];
-  [[self.detailPagesLabel.leadingAnchor constraintEqualToAnchor:self.detailImageView.leadingAnchor] setActive:YES];
-  [[self.detailPagesLabel.trailingAnchor constraintEqualToAnchor:self.detailImageView.trailingAnchor] setActive:YES];
+  [[self.detailPagesLabel.leadingAnchor constraintEqualToAnchor:page.trailingAnchor] setActive:YES];
+  [isbn13 sizeToFit];
+  
+  UILabel *year = [[UILabel alloc] init];
+  [year setTranslatesAutoresizingMaskIntoConstraints:NO];
+  [year setText:@"year:"];
+  [self addSubview:year];
+  [[year.topAnchor constraintEqualToAnchor:self.detailPagesLabel.bottomAnchor constant:4] setActive:YES];
+  [[year.leadingAnchor constraintEqualToAnchor:self.detailImageView.leadingAnchor] setActive:YES];
+  [year sizeToFit];
   
   [self addSubview:self.detailYearLabel];
   [[self.detailYearLabel.topAnchor constraintEqualToAnchor:self.detailPagesLabel.bottomAnchor constant:4] setActive:YES];
-  [[self.detailYearLabel.leadingAnchor constraintEqualToAnchor:self.detailImageView.leadingAnchor] setActive:YES];
-  [[self.detailYearLabel.trailingAnchor constraintEqualToAnchor:self.detailImageView.trailingAnchor] setActive:YES];
+  [[self.detailYearLabel.leadingAnchor constraintEqualToAnchor:year.trailingAnchor] setActive:YES];
+  [self.detailYearLabel sizeToFit];
   
   [self addSubview:self.detailRatingLabel];
   [[self.detailRatingLabel.topAnchor constraintEqualToAnchor:self.detailYearLabel.bottomAnchor constant:4] setActive:YES];
   [[self.detailRatingLabel.leadingAnchor constraintEqualToAnchor:self.detailImageView.leadingAnchor] setActive:YES];
-  [[self.detailRatingLabel.trailingAnchor constraintEqualToAnchor:self.detailImageView.trailingAnchor] setActive:YES];
+  [self.detailRatingLabel sizeToFit];
+  
+  UILabel *rating = [[UILabel alloc] init];
+  [rating setTranslatesAutoresizingMaskIntoConstraints:NO];
+  [rating setText:@"/5 rating!"];
+  [self addSubview:rating];
+  [[rating.topAnchor constraintEqualToAnchor:self.detailYearLabel.bottomAnchor constant:4] setActive:YES];
+  [[rating.leadingAnchor constraintEqualToAnchor:self.detailRatingLabel.trailingAnchor] setActive:YES];
+  [rating sizeToFit];
   
   [self addSubview:self.detailDescLabel];
   [[self.detailDescLabel.topAnchor constraintEqualToAnchor:self.detailRatingLabel.bottomAnchor constant:4] setActive:YES];

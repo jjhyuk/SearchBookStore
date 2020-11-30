@@ -101,12 +101,34 @@
 		943D840B2575212A00EBEB95 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				945461412570BC910054BE9D /* DetailViewController.h */,
+				945461422570BC910054BE9D /* DetailViewController.m */,
 				943D840C2575216800EBEB95 /* DetailInformationView.h */,
 				943D840D2575216800EBEB95 /* DetailInformationView.m */,
 				943D84112575217A00EBEB95 /* DetailInforamationMemo.h */,
 				943D84122575217A00EBEB95 /* DetailInforamationMemo.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		943D84172575490900EBEB95 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9490F78A2573CA5B0053E9D8 /* DetailView.h */,
+				9490F78F2573CB070053E9D8 /* DetailBookPresenter.h */,
+				9490F7902573CB070053E9D8 /* DetailBookPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		943D84182575491800EBEB95 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9490F7932573CB150053E9D8 /* DetailBookService.h */,
+				9490F7982573CB270053E9D8 /* DetailBookServiceImpl.h */,
+				9490F7992573CB270053E9D8 /* DetailBookServiceImpl.m */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		94546087256E74740054BE9D = {
@@ -210,14 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				943D840B2575212A00EBEB95 /* View */,
-				945461412570BC910054BE9D /* DetailViewController.h */,
-				945461422570BC910054BE9D /* DetailViewController.m */,
-				9490F78A2573CA5B0053E9D8 /* DetailView.h */,
-				9490F78F2573CB070053E9D8 /* DetailBookPresenter.h */,
-				9490F7902573CB070053E9D8 /* DetailBookPresenter.m */,
-				9490F7932573CB150053E9D8 /* DetailBookService.h */,
-				9490F7982573CB270053E9D8 /* DetailBookServiceImpl.h */,
-				9490F7992573CB270053E9D8 /* DetailBookServiceImpl.m */,
+				943D84172575490900EBEB95 /* Presenter */,
+				943D84182575491800EBEB95 /* Service */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";

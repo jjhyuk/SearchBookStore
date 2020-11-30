@@ -32,33 +32,28 @@
   [self.searchTitleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
   [self.searchTitleLabel setFont:[UIFont boldSystemFontOfSize:18.0f]];
   [self.searchTitleLabel setNumberOfLines:3];
-  [self.searchTitleLabel setText:@"This is titleLabel!"];
   [self.searchTitleLabel setLineBreakMode:NSLineBreakByWordWrapping];
   
   self.searchSubtitleLabel = [[UILabel alloc] init];
   [self.searchSubtitleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
   [self.searchSubtitleLabel setNumberOfLines:2];
-  [self.searchSubtitleLabel setText:@"This is subtitleLabel!"];
   [self.searchSubtitleLabel setFont:[UIFont systemFontOfSize:14.0f]];
   [self.searchSubtitleLabel setTextColor:[UIColor grayColor]];
   [self.searchSubtitleLabel setLineBreakMode:NSLineBreakByWordWrapping];
   
   self.searchIsbn13Label = [[UILabel alloc] init];
   [self.searchIsbn13Label setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self.searchIsbn13Label setText:@"This is isbn13Label!"];
   [self.searchIsbn13Label setTextColor:[UIColor whiteColor]];
   [self.searchIsbn13Label setFont:[UIFont systemFontOfSize:12.0f]];
   [self.searchIsbn13Label setTextAlignment:NSTextAlignmentRight];
   
   self.searchPriceLabel = [[UILabel alloc] init];
   [self.searchPriceLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self.searchPriceLabel setText:@"$30.00"];
   [self.searchPriceLabel setFont:[UIFont boldSystemFontOfSize:16.0f]];
   [self.searchPriceLabel setTextAlignment:NSTextAlignmentRight];
   
   self.searchUrlLabel = [[UILabel alloc] init];
   [self.searchUrlLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self.searchUrlLabel setText:@"This is urlLabel!"];
   [self.searchUrlLabel setFont:[UIFont italicSystemFontOfSize:12.0f]];
   
   [self.contentView addSubview:self.searchImageView];

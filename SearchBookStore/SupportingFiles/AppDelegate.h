@@ -6,9 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SeachViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, strong) SeachViewController *seachViewController;
 
 @end
 

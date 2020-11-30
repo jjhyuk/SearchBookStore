@@ -7,28 +7,75 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		943D823E257494A500EBEB95 /* UIColor+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 943D823D257494A500EBEB95 /* UIColor+Color.m */; };
+		943D840E2575216800EBEB95 /* DetailInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 943D840D2575216800EBEB95 /* DetailInformationView.m */; };
+		943D84132575217A00EBEB95 /* DetailInforamationMemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 943D84122575217A00EBEB95 /* DetailInforamationMemo.m */; };
 		94546095256E74740054BE9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94546094256E74740054BE9D /* AppDelegate.m */; };
-		94546098256E74740054BE9D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94546097256E74740054BE9D /* SceneDelegate.m */; };
-		9454609B256E74740054BE9D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9454609A256E74740054BE9D /* ViewController.m */; };
-		9454609E256E74740054BE9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9454609C256E74740054BE9D /* Main.storyboard */; };
+		9454609B256E74740054BE9D /* SeachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9454609A256E74740054BE9D /* SeachViewController.m */; };
 		945460A0256E74760054BE9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9454609F256E74760054BE9D /* Assets.xcassets */; };
 		945460A3256E74760054BE9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945460A1256E74760054BE9D /* LaunchScreen.storyboard */; };
 		945460A6256E74760054BE9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 945460A5256E74760054BE9D /* main.m */; };
+		945460CC256E771C0054BE9D /* JHNetworkReqeust.m in Sources */ = {isa = PBXBuildFile; fileRef = 945460CB256E771C0054BE9D /* JHNetworkReqeust.m */; };
+		945460D1256E778B0054BE9D /* JHLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 945460D0256E778B0054BE9D /* JHLogManager.m */; };
+		945460D8256E7CBE0054BE9D /* JHConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 945460D7256E7CBE0054BE9D /* JHConfiguration.m */; };
+		945460DE256E89350054BE9D /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 945460DD256E89350054BE9D /* NSDictionary+Extension.m */; };
+		945460E9256E93380054BE9D /* SearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 945460E8256E93380054BE9D /* SearchPresenter.m */; };
+		9454612F256EA5180054BE9D /* SearchServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9454612E256EA5180054BE9D /* SearchServiceImpl.m */; };
+		94546136256FD9580054BE9D /* SearchBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 94546135256FD9580054BE9D /* SearchBook.m */; };
+		9454613B256FF1BA0054BE9D /* JHCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9454613A256FF1BA0054BE9D /* JHCacheManager.m */; };
+		945461432570BC910054BE9D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945461422570BC910054BE9D /* DetailViewController.m */; };
+		9454615925714B000054BE9D /* DetailBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 9454615825714B000054BE9D /* DetailBook.m */; };
+		9454616E257364B20054BE9D /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9454616D257364B20054BE9D /* SearchTableViewCell.m */; };
+		9490F7912573CB070053E9D8 /* DetailBookPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9490F7902573CB070053E9D8 /* DetailBookPresenter.m */; };
+		9490F79A2573CB270053E9D8 /* DetailBookServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9490F7992573CB270053E9D8 /* DetailBookServiceImpl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		943D823C257494A500EBEB95 /* UIColor+Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Color.h"; sourceTree = "<group>"; };
+		943D823D257494A500EBEB95 /* UIColor+Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Color.m"; sourceTree = "<group>"; };
+		943D840C2575216800EBEB95 /* DetailInformationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailInformationView.h; sourceTree = "<group>"; };
+		943D840D2575216800EBEB95 /* DetailInformationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailInformationView.m; sourceTree = "<group>"; };
+		943D84112575217A00EBEB95 /* DetailInforamationMemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailInforamationMemo.h; sourceTree = "<group>"; };
+		943D84122575217A00EBEB95 /* DetailInforamationMemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailInforamationMemo.m; sourceTree = "<group>"; };
 		94546090256E74740054BE9D /* SearchBookStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchBookStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94546093256E74740054BE9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		94546094256E74740054BE9D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		94546096256E74740054BE9D /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		94546097256E74740054BE9D /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		94546099256E74740054BE9D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9454609A256E74740054BE9D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9454609D256E74740054BE9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		94546099256E74740054BE9D /* SeachViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeachViewController.h; sourceTree = "<group>"; };
+		9454609A256E74740054BE9D /* SeachViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeachViewController.m; sourceTree = "<group>"; };
 		9454609F256E74760054BE9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		945460A2256E74760054BE9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		945460A4256E74760054BE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		945460A5256E74760054BE9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		945460CA256E771C0054BE9D /* JHNetworkReqeust.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHNetworkReqeust.h; sourceTree = "<group>"; };
+		945460CB256E771C0054BE9D /* JHNetworkReqeust.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHNetworkReqeust.m; sourceTree = "<group>"; };
+		945460CF256E778B0054BE9D /* JHLogManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHLogManager.h; sourceTree = "<group>"; };
+		945460D0256E778B0054BE9D /* JHLogManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHLogManager.m; sourceTree = "<group>"; };
+		945460D6256E7CBE0054BE9D /* JHConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHConfiguration.h; sourceTree = "<group>"; };
+		945460D7256E7CBE0054BE9D /* JHConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHConfiguration.m; sourceTree = "<group>"; };
+		945460DC256E89350054BE9D /* NSDictionary+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
+		945460DD256E89350054BE9D /* NSDictionary+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
+		945460E7256E93380054BE9D /* SearchPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchPresenter.h; sourceTree = "<group>"; };
+		945460E8256E93380054BE9D /* SearchPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchPresenter.m; sourceTree = "<group>"; };
+		94546123256EA3E10054BE9D /* SearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
+		94546128256EA4E80054BE9D /* SearchService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchService.h; sourceTree = "<group>"; };
+		9454612D256EA5180054BE9D /* SearchServiceImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchServiceImpl.h; sourceTree = "<group>"; };
+		9454612E256EA5180054BE9D /* SearchServiceImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchServiceImpl.m; sourceTree = "<group>"; };
+		94546134256FD9580054BE9D /* SearchBook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBook.h; sourceTree = "<group>"; };
+		94546135256FD9580054BE9D /* SearchBook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBook.m; sourceTree = "<group>"; };
+		94546139256FF1BA0054BE9D /* JHCacheManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHCacheManager.h; sourceTree = "<group>"; };
+		9454613A256FF1BA0054BE9D /* JHCacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHCacheManager.m; sourceTree = "<group>"; };
+		945461412570BC910054BE9D /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		945461422570BC910054BE9D /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		9454615725714B000054BE9D /* DetailBook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailBook.h; sourceTree = "<group>"; };
+		9454615825714B000054BE9D /* DetailBook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailBook.m; sourceTree = "<group>"; };
+		9454616C257364B20054BE9D /* SearchTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
+		9454616D257364B20054BE9D /* SearchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
+		9490F78A2573CA5B0053E9D8 /* DetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailView.h; sourceTree = "<group>"; };
+		9490F78F2573CB070053E9D8 /* DetailBookPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailBookPresenter.h; sourceTree = "<group>"; };
+		9490F7902573CB070053E9D8 /* DetailBookPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailBookPresenter.m; sourceTree = "<group>"; };
+		9490F7932573CB150053E9D8 /* DetailBookService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailBookService.h; sourceTree = "<group>"; };
+		9490F7982573CB270053E9D8 /* DetailBookServiceImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailBookServiceImpl.h; sourceTree = "<group>"; };
+		9490F7992573CB270053E9D8 /* DetailBookServiceImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailBookServiceImpl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +89,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		940856042573965B005F5BA8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9454616C257364B20054BE9D /* SearchTableViewCell.h */,
+				9454616D257364B20054BE9D /* SearchTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		943D840B2575212A00EBEB95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				943D840C2575216800EBEB95 /* DetailInformationView.h */,
+				943D840D2575216800EBEB95 /* DetailInformationView.m */,
+				943D84112575217A00EBEB95 /* DetailInforamationMemo.h */,
+				943D84122575217A00EBEB95 /* DetailInforamationMemo.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		94546087256E74740054BE9D = {
 			isa = PBXGroup;
 			children = (
@@ -61,19 +128,128 @@
 		94546092256E74740054BE9D /* SearchBookStore */ = {
 			isa = PBXGroup;
 			children = (
+				945460E2256E91460054BE9D /* SupportingFiles */,
+				945460DA256E89160054BE9D /* Extension */,
+				945460CE256E77240054BE9D /* Utils */,
+				945460AD256E747E0054BE9D /* Network */,
+				94546133256FD92F0054BE9D /* Model */,
+				945460E1256E91330054BE9D /* SearchView */,
+				945461402570B65E0054BE9D /* DetailView */,
+			);
+			path = SearchBookStore;
+			sourceTree = "<group>";
+		};
+		945460AD256E747E0054BE9D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				945460CA256E771C0054BE9D /* JHNetworkReqeust.h */,
+				945460CB256E771C0054BE9D /* JHNetworkReqeust.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		945460CE256E77240054BE9D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				945460CF256E778B0054BE9D /* JHLogManager.h */,
+				945460D0256E778B0054BE9D /* JHLogManager.m */,
+				945460D6256E7CBE0054BE9D /* JHConfiguration.h */,
+				945460D7256E7CBE0054BE9D /* JHConfiguration.m */,
+				94546139256FF1BA0054BE9D /* JHCacheManager.h */,
+				9454613A256FF1BA0054BE9D /* JHCacheManager.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		945460DA256E89160054BE9D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				945460DC256E89350054BE9D /* NSDictionary+Extension.h */,
+				945460DD256E89350054BE9D /* NSDictionary+Extension.m */,
+				943D823C257494A500EBEB95 /* UIColor+Color.h */,
+				943D823D257494A500EBEB95 /* UIColor+Color.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		945460E1256E91330054BE9D /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				9490F79E2573CBBB0053E9D8 /* View */,
+				9490F79D2573CBA80053E9D8 /* Presenter */,
+				9490F79F2573CBC70053E9D8 /* Service */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		945460E2256E91460054BE9D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				94546093256E74740054BE9D /* AppDelegate.h */,
 				94546094256E74740054BE9D /* AppDelegate.m */,
-				94546096256E74740054BE9D /* SceneDelegate.h */,
-				94546097256E74740054BE9D /* SceneDelegate.m */,
-				94546099256E74740054BE9D /* ViewController.h */,
-				9454609A256E74740054BE9D /* ViewController.m */,
-				9454609C256E74740054BE9D /* Main.storyboard */,
 				9454609F256E74760054BE9D /* Assets.xcassets */,
 				945460A1256E74760054BE9D /* LaunchScreen.storyboard */,
 				945460A4256E74760054BE9D /* Info.plist */,
 				945460A5256E74760054BE9D /* main.m */,
 			);
-			path = SearchBookStore;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		94546133256FD92F0054BE9D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				94546134256FD9580054BE9D /* SearchBook.h */,
+				94546135256FD9580054BE9D /* SearchBook.m */,
+				9454615725714B000054BE9D /* DetailBook.h */,
+				9454615825714B000054BE9D /* DetailBook.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		945461402570B65E0054BE9D /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				943D840B2575212A00EBEB95 /* View */,
+				945461412570BC910054BE9D /* DetailViewController.h */,
+				945461422570BC910054BE9D /* DetailViewController.m */,
+				9490F78A2573CA5B0053E9D8 /* DetailView.h */,
+				9490F78F2573CB070053E9D8 /* DetailBookPresenter.h */,
+				9490F7902573CB070053E9D8 /* DetailBookPresenter.m */,
+				9490F7932573CB150053E9D8 /* DetailBookService.h */,
+				9490F7982573CB270053E9D8 /* DetailBookServiceImpl.h */,
+				9490F7992573CB270053E9D8 /* DetailBookServiceImpl.m */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		9490F79D2573CBA80053E9D8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				94546123256EA3E10054BE9D /* SearchView.h */,
+				945460E7256E93380054BE9D /* SearchPresenter.h */,
+				945460E8256E93380054BE9D /* SearchPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9490F79E2573CBBB0053E9D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				940856042573965B005F5BA8 /* Cell */,
+				94546099256E74740054BE9D /* SeachViewController.h */,
+				9454609A256E74740054BE9D /* SeachViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9490F79F2573CBC70053E9D8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				94546128256EA4E80054BE9D /* SearchService.h */,
+				9454612D256EA5180054BE9D /* SearchServiceImpl.h */,
+				9454612E256EA5180054BE9D /* SearchServiceImpl.m */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +310,6 @@
 			files = (
 				945460A3256E74760054BE9D /* LaunchScreen.storyboard in Resources */,
 				945460A0256E74760054BE9D /* Assets.xcassets in Resources */,
-				9454609E256E74740054BE9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,24 +320,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9454609B256E74740054BE9D /* ViewController.m in Sources */,
+				9454613B256FF1BA0054BE9D /* JHCacheManager.m in Sources */,
+				9454612F256EA5180054BE9D /* SearchServiceImpl.m in Sources */,
+				945460D1256E778B0054BE9D /* JHLogManager.m in Sources */,
+				9454609B256E74740054BE9D /* SeachViewController.m in Sources */,
+				94546136256FD9580054BE9D /* SearchBook.m in Sources */,
+				945460DE256E89350054BE9D /* NSDictionary+Extension.m in Sources */,
 				94546095256E74740054BE9D /* AppDelegate.m in Sources */,
+				9490F7912573CB070053E9D8 /* DetailBookPresenter.m in Sources */,
+				945460E9256E93380054BE9D /* SearchPresenter.m in Sources */,
 				945460A6256E74760054BE9D /* main.m in Sources */,
-				94546098256E74740054BE9D /* SceneDelegate.m in Sources */,
+				9490F79A2573CB270053E9D8 /* DetailBookServiceImpl.m in Sources */,
+				943D840E2575216800EBEB95 /* DetailInformationView.m in Sources */,
+				9454616E257364B20054BE9D /* SearchTableViewCell.m in Sources */,
+				943D823E257494A500EBEB95 /* UIColor+Color.m in Sources */,
+				945461432570BC910054BE9D /* DetailViewController.m in Sources */,
+				945460D8256E7CBE0054BE9D /* JHConfiguration.m in Sources */,
+				945460CC256E771C0054BE9D /* JHNetworkReqeust.m in Sources */,
+				9454615925714B000054BE9D /* DetailBook.m in Sources */,
+				943D84132575217A00EBEB95 /* DetailInforamationMemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9454609C256E74740054BE9D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9454609D256E74740054BE9D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		945460A1256E74760054BE9D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,14 +473,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SearchBookStore/Info.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 87WS4ARQXB;
+				INFOPLIST_FILE = SearchBookStore/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jang.jinhyuk.SearchBookStore;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joycity.platform.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Development_JoypleSample_For_Xcode_11;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -308,14 +493,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SearchBookStore/Info.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 87WS4ARQXB;
+				INFOPLIST_FILE = SearchBookStore/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jang.jinhyuk.SearchBookStore;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joycity.platform.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Development_JoypleSample_For_Xcode_11;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

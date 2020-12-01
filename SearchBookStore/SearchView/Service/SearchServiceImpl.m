@@ -16,7 +16,6 @@
                           handler:(SerachServiceResultBlock)handler{
   JHLog();
   
-  // 수정 필요
   NSString *path = [NSString stringWithFormat:@"search/%@/%d", keyword, index];
   
   [JHNetworkReqeust excute:GET
@@ -24,7 +23,6 @@
                      param:nil
                    handler:^(NSDictionary * _Nullable JSON, NSString * _Nullable keyword, NSError * _Nullable error) {
     if(error) {
-      // 에러처리
       handler(nil,nil,error);
       return;
     }
@@ -34,6 +32,19 @@
   }];
 }
 
+-(void)fetchSearchImage:(NSString *)url handler:(SerachImageServiceResultBlock)handler{
+  
+  [JHNetworkReqeust excuteImage:url
+                        handler:^(NSData * _Nullable data, NSString * _Nullable isbn13, NSError * _Nullable error) {
+    if(error){
+      handler(nil,nil,error);
+      return;
+    }
+    
+    handler(data,isbn13,nil);
+    return;
+  }];
+}
 
 
 

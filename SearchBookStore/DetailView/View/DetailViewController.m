@@ -113,18 +113,11 @@
   JHLog(@"%@",self->_isbn13);
 }
 
-- (void)viewWillLayoutSubviews{
-  [super viewWillLayoutSubviews];
-  
-}
 - (void)viewDidLayoutSubviews{
   [super viewDidLayoutSubviews];
   
   self->_informationWidthConstraint.constant = self.view.frame.size.width;
   self->_memoWidthConstraint.constant = self.view.frame.size.width;
-  
-  [self.view updateConstraintsIfNeeded];
-  [self.informationView updateConstraintsIfNeeded];
   
   [self.scrollView setContentSize:CGSizeMake(self.scrollView.bounds.size.width, self.informationView.bounds.size.height + self.memoView.bounds.size.height + 200)];
 }
@@ -134,6 +127,20 @@
   
   JHLog(@"error: %@",error);
   
+  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error!"
+                                                                 message:[error localizedDescription]
+                                                          preferredStyle:UIAlertControllerStyleAlert];
+  
+  UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                   style:UIAlertActionStyleDefault
+                                                 handler:^(UIAlertAction * action){
+    [alert dismissViewControllerAnimated:YES completion:nil];
+  }];
+  [alert addAction:cancel];
+  
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [self presentViewController:alert animated:YES completion:nil];
+  });
 }
 
 -(void)successToReqeustDetailBook:(DetailBook *)book {
@@ -183,7 +190,6 @@
   if (!CGRectContainsPoint(aRect, self.memoView.frame.origin) ) {
     [self.scrollView setContentOffset:CGPointMake(0,self.scrollView.frame.size.height) animated:YES];
   }
-  
 }
 
 -(void)keyboardWillHide:(NSNotification *)notification{

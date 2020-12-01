@@ -38,12 +38,14 @@
   
   NSString *httpMethod = [self convertHttpMethod:method];
   [urlRequest setHTTPMethod:httpMethod];
+  [urlRequest setTimeoutInterval:5];
   
   NSURLSessionConfiguration * defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
   NSURLSession *session = [NSURLSession sessionWithConfiguration:defaultConfigObject delegate:nil delegateQueue:nil];
-  NSLog(@"DiskCache: %@ of %@", @([[NSURLCache sharedURLCache] currentDiskUsage]), @([[NSURLCache sharedURLCache] diskCapacity]));
-  NSLog(@"MemoryCache: %@ of %@", @([[NSURLCache sharedURLCache] currentMemoryUsage]), @([[NSURLCache sharedURLCache] memoryCapacity]));
+  JHLog(@"DiskCache: %@ of %@", @([[NSURLCache sharedURLCache] currentDiskUsage]), @([[NSURLCache sharedURLCache] diskCapacity]));
+  JHLog(@"MemoryCache: %@ of %@", @([[NSURLCache sharedURLCache] currentMemoryUsage]), @([[NSURLCache sharedURLCache] memoryCapacity]));
   JHLog(@"\n\nReqeust===================================================================\n\nURL: %@\n\nMETHOD: %@\n\nPARAMETERS: %@\n\n==========================================================================",url,httpMethod,params);
+  
   
   NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
                                     {
@@ -85,6 +87,29 @@
                                                  code:HTTP_ERROR_BASE - httpResponse.statusCode
                                              userInfo:@{NSLocalizedDescriptionKey:@"A network error has occurred"}];
       handler(nil, nil, statusError);
+      return;
+    }
+  }];
+  [dataTask resume];
+}
+
++(void) excuteImage:(NSString * _Nonnull)url
+            handler:(reqeustImageCompletionHandler _Nonnull) handler{
+  JHLog();
+  
+  NSURL *imageUrl = [NSURL URLWithString:url];
+  
+  NSURLSessionConfiguration * defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
+  NSURLSession *session = [NSURLSession sessionWithConfiguration:defaultConfigObject delegate:nil delegateQueue:nil];
+  NSURLSessionDataTask *dataTask = [session dataTaskWithURL:imageUrl
+                                          completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    if(error){
+      handler(nil, nil, error);
+      return;
+    } else {
+      
+      NSString *isbn13 = [[[[response URL] lastPathComponent] componentsSeparatedByString:@"."] objectAtIndex:0];
+      handler(data, isbn13, nil);
       return;
     }
   }];

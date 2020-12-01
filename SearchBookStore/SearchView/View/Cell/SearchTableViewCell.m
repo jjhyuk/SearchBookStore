@@ -6,10 +6,13 @@
 //
 
 #import "SearchTableViewCell.h"
+#import "UIColor+Color.h"
 
 @interface SearchTableViewCell()
 {
   UILabel *PriceTextLabel;
+  
+  NSLayoutConstraint *_imageWidth;
 }
 
 @end
@@ -27,6 +30,8 @@
   self.searchImageView = [[UIImageView alloc] init];
   [self.searchImageView setContentMode:UIViewContentModeScaleAspectFit];
   [self.searchImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
+  [self.searchImageView.layer setCornerRadius:10.0f];
+  [self.searchImageView setBackgroundColor:[UIColor colorFromRGB:0xF0F1F4]];
   
   self.searchTitleLabel = [[UILabel alloc] init];
   [self.searchTitleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -43,7 +48,7 @@
   
   self.searchIsbn13Label = [[UILabel alloc] init];
   [self.searchIsbn13Label setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self.searchIsbn13Label setTextColor:[UIColor whiteColor]];
+  [self.searchIsbn13Label setTextColor:[UIColor blackColor]];
   [self.searchIsbn13Label setFont:[UIFont systemFontOfSize:12.0f]];
   [self.searchIsbn13Label setTextAlignment:NSTextAlignmentRight];
   
@@ -59,13 +64,14 @@
   [self.contentView addSubview:self.searchImageView];
   [[self.searchImageView.topAnchor constraintEqualToAnchor:self.contentView.topAnchor constant:8] setActive:YES];
   [[self.searchImageView.leadingAnchor constraintEqualToAnchor:self.contentView.leadingAnchor constant:8] setActive:YES];
-  [[self.searchImageView.widthAnchor constraintEqualToConstant:0.0f] setActive:YES];
+  self->_imageWidth = [self.searchImageView.widthAnchor constraintEqualToConstant:0.0f];
+  [self->_imageWidth setActive:YES];
   [[self.searchImageView.heightAnchor constraintEqualToConstant:140.0f] setActive:YES];
   
   [self.contentView addSubview:self.searchIsbn13Label];
+  [[self.searchIsbn13Label.topAnchor constraintEqualToAnchor:self.searchImageView.topAnchor constant:4] setActive:YES];
   [[self.searchIsbn13Label.leadingAnchor constraintEqualToAnchor:self.searchImageView.leadingAnchor constant:4] setActive:YES];
   [[self.searchIsbn13Label.trailingAnchor constraintEqualToAnchor:self.searchImageView.trailingAnchor constant:-4] setActive:YES];
-  [[self.searchIsbn13Label.bottomAnchor constraintEqualToAnchor:self.searchImageView.bottomAnchor constant:-4] setActive:YES];
   
   [self.contentView addSubview:self.searchTitleLabel];
   [[self.searchTitleLabel.topAnchor constraintEqualToAnchor:self.searchImageView.topAnchor] setActive:YES];
@@ -99,8 +105,17 @@
 }
 
 -(void)setSearchImageInCell:(NSData *)imageData{
-  [[self.searchImageView.widthAnchor constraintEqualToConstant:140.0f] setActive:YES];
-  [self.searchImageView setImage:[UIImage imageWithData:imageData]];
+  if(imageData){
+    [self->_imageWidth setConstant:140.0f];
+    [self.searchImageView setImage:[UIImage imageWithData:imageData]];
+  }
 }
 
+-(void)prepareForReuse{
+  [super prepareForReuse];
+  
+  [self->_imageWidth setConstant:0.0f];
+  [self.searchImageView setImage:nil];
+    
+}
 @end

@@ -16,13 +16,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SearchPresenter : NSObject
 
+/// Presenter Init
+/// @param view view Protocol
+/// @param service service Protocol
 -(void)attchwithView:(id<SearchView>)view
              service:(id<SearchService>)service;
 
 -(void)reqestDataWithKeyword:(NSString *)keyword;
 -(void)reqeustNextData;
 -(void)reqestDataWithKeyword:(NSString *)keyword page:(int)index;
-
+-(void)reqeustImageData:(NSString *)url;
 @end
 
 NS_ASSUME_NONNULL_END

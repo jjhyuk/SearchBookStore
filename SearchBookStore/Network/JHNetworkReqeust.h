@@ -31,6 +31,10 @@ typedef void (^reqeustCompletionHandler)(NSDictionary * _Nullable JSON, NSString
          param:(NSDictionary * _Nullable) params
        handler:(reqeustCompletionHandler _Nonnull) handler;
 
+typedef void (^reqeustImageCompletionHandler)(NSData * _Nullable data, NSString * _Nullable isbn13, NSError * _Nullable error);
++(void) excuteImage:(NSString * _Nonnull)url
+            handler:(reqeustImageCompletionHandler _Nonnull) handler;
+
 @end
 
 NS_ASSUME_NONNULL_END

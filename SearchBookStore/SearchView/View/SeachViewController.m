@@ -16,6 +16,10 @@
 @property (nonatomic, strong) DetailViewController *detailViewController;
 
 @property (nonatomic, strong) NSString *searchKeyword;
+
+@property (nonatomic, strong) NSMutableDictionary *cellIndex;
+
+@property (nonatomic) int nextRequestController;
 @end
 
 @implementation SeachViewController
@@ -51,7 +55,6 @@
   self.searchBarController = [[UISearchController alloc] initWithSearchResultsController:nil];
   [self.searchBarController setDelegate:self];
   [self.searchBarController setObscuresBackgroundDuringPresentation:NO];
-  [self.searchBarController setShowsSearchResultsController:YES];
   [self.searchBarController.searchBar setDelegate:self];
   [self.navigationController setDefinesPresentationContext:YES];
   [self.searchBarController.searchBar setPlaceholder:@"Book Name"];
@@ -70,7 +73,8 @@
   [self.tableView setEstimatedRowHeight:UITableViewAutomaticDimension];
   [self.tableView setEstimatedRowHeight:100.0f];
   [self.tableView setPrefetchDataSource:self];
-  [self.tableView registerClass:SearchTableViewCell.class forCellReuseIdentifier:@"TEST"];
+  [self.tableView registerClass:SearchTableViewCell.class forCellReuseIdentifier:SearchTableViewCell.description];
+  [self.tableView setShowsVerticalScrollIndicator:NO];
   
   [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
   [self.view addSubview:self.tableView];
@@ -93,10 +97,14 @@
   
   _cacheManger = [JHCacheManager shared];
   _searchResult = [[NSMutableArray alloc] init];
+  _cellIndex = [[NSMutableDictionary alloc] init];
   
   [self.tableView setDelegate:self];
   [self.tableView setDataSource:self];
   
+  _nextRequestController = 1;
+  
+  self->_cellIndex = nil;
   [_presenter reqestDataWithKeyword:@"new"];
 }
 
@@ -105,24 +113,43 @@
 
 - (void)failToReqeustSearchData:(NSError *)error {
   
-  JHLog();
+  JHLog(@"%@",error);
   
+  if(error.code == LAST_PAGE_ERROR_BASE){
+    return;
+  }
+  
+  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error!"
+                                                                 message:[error localizedDescription]
+                                                          preferredStyle:UIAlertControllerStyleAlert];
+  
+  UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                   style:UIAlertActionStyleDefault
+                                                 handler:^(UIAlertAction * action){
+    [alert dismissViewControllerAnimated:YES completion:nil];
+  }];
+  [alert addAction:cancel];
+  
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [self presentViewController:alert animated:YES completion:nil];
+  });
 }
 
 -(void)successToReqeustSearchKeyword:(NSString *)keyword
                                 data:(NSArray<SearchBook *> *)data{
   
   JHLog(@"keyword: %@, count: %lu", keyword, [data count]);
+  self->_nextRequestController--;
+  if(self->_nextRequestController < 0){
+    _nextRequestController = 0;
+  }
   
   for(SearchBook *book in data){
     __block NSData *imageData;
     if([self->_cacheManger isExistKeyword:book.isbn13]){
       imageData = [self->_cacheManger objectForKey:book.isbn13];
     } else {
-      dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:book.image]];
-        [self->_cacheManger setData:imageData forKey:book.isbn13];
-      });
+      [_presenter reqeustImageData:book.image];
     }
   }
   
@@ -131,6 +158,7 @@
   } else {
     self->_searchKeyword = keyword;
     self.searchResult = [data mutableCopy];
+    
   }
   
   dispatch_async(dispatch_get_main_queue(), ^{
@@ -139,12 +167,34 @@
   });
 }
 
+- (void)updateImage:(NSData *)data isbn13:(NSString *)isbn13{
+  if(!data){
+    return;
+  }
+  
+  [self->_cacheManger setData:data forKey:isbn13];
+  
+  dispatch_async(dispatch_get_main_queue(), ^{
+    @try {
+      [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:self->_cellIndex[isbn13], nil] withRowAnimation:UITableViewRowAnimationNone];
+    } @catch (NSException *exception) {
+      JHLog(@"%@",exception);
+      return;
+    }
+  });
+}
+
 
 #pragma mark - TableView Delegate, DataSource
 
 -(nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
   
-  SearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TEST"];
+  if(indexPath.row > [self.searchResult count]){
+    return nil;
+  }
+  
+  SearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SearchTableViewCell.description];
+  
   [cell.searchTitleLabel setText:[self.searchResult[indexPath.row] title]];
   [cell.searchSubtitleLabel setText:[self.searchResult[indexPath.row] subtitle]];
   [cell.searchIsbn13Label setText:[self.searchResult[indexPath.row] isbn13]];
@@ -153,8 +203,9 @@
   
   if([self->_cacheManger isExistKeyword:[self.searchResult[indexPath.row] isbn13]]){
     [cell setSearchImageInCell:[self->_cacheManger objectForKey:[self.searchResult[indexPath.row] isbn13]]];
+  } else {
+    [self->_cellIndex setObject:indexPath forKey:[self.searchResult[indexPath.row] isbn13]];
   }
-  
   return cell;
 }
 
@@ -186,8 +237,19 @@
 }
 
 - (void)tableView:(nonnull UITableView *)tableView prefetchRowsAtIndexPaths:(nonnull NSArray<NSIndexPath *> *)indexPaths {
-  for(NSIndexPath *indexPath in indexPaths){
-    if(indexPath.row + 3 == self.searchResult.count){
+  NSIndexPath *indexPath = [indexPaths lastObject];
+    if(indexPath.row + 1 == self.searchResult.count){
+      if(_nextRequestController < 2 && _nextRequestController > -1){
+        ++_nextRequestController;
+        [_presenter reqeustNextData];
+      }
+    }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+  if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
+    if(_nextRequestController < 2 && _nextRequestController > -1){
+      ++_nextRequestController;
       [_presenter reqeustNextData];
     }
   }
@@ -199,6 +261,8 @@
   JHLog("%@",searchText);
   
   if(searchText.length == 0){
+    
+    self->_cellIndex = nil;
     [_presenter reqestDataWithKeyword:@"new"];
     return;
   }
@@ -207,6 +271,8 @@
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar API_UNAVAILABLE(tvos){
+  
+  self->_cellIndex = nil;
   [_presenter reqestDataWithKeyword:@"new"];
 }
 

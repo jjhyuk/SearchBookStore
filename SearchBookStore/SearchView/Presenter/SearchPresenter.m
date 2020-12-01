@@ -44,7 +44,7 @@
   
   if(![self->_keyword isEqual:keyword]){
     self->_keyword = keyword;
-    self->_currentPage = 1;
+    self->_currentPage = 0;
     self->_lastPage = 1;
   }
   
@@ -83,6 +83,11 @@
     return;
   }
   
+  if(index < _currentPage){
+    return;
+  }
+  self->_currentPage++;
+  
   [_service fetchSearchDataWithKeywork:keyword
                                   page:index
                                handler:^(NSDictionary *JSON, NSString *keyword, NSError *error) {
@@ -109,7 +114,6 @@
   
   JHLog();
   
-  self->_currentPage = [[JSON objectForKey:@"page"] intValue];
   self->_lastPage = [[JSON objectForKey:@"total"] intValue];
   NSArray *jsonArray = [JSON objectForKey:@"books"];
   
@@ -129,6 +133,18 @@
   }];
   
   return [searchBooks copy];
+}
+
+-(void)reqeustImageData:(NSString *)url{
+  [_service fetchSearchImage:url
+                     handler:^(NSData *data, NSString *isbn13, NSError *error) {
+    if(error){
+      return;
+    }
+    
+    [self->_view updateImage:data isbn13:isbn13];
+    return;
+  }];
 }
 
 @end

@@ -259,7 +259,6 @@
 }
 
 -(void)setDetailImage:(NSData *)imageData{
-//  [[self.detailImageView.heightAnchor constraintEqualToConstant:300.0f] setActive:YES];
   [self.detailImageView setImage:[UIImage imageWithData:imageData]];
 }
 

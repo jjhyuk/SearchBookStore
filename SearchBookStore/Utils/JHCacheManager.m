@@ -52,12 +52,8 @@
     }
   }
   
-  // 메모리를 너무 많이 사용하기에 패스
-  dispatch_queue_t concurrentQueue = dispatch_queue_create("concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
-  dispatch_async(concurrentQueue, ^{
-    [self->_cache setObject:data forKey:key];
-    [self->_userDefaults setObject:data forKey:key];
-  });
+  [self->_cache setObject:data forKey:key];
+  [self->_userDefaults setObject:data forKey:key];
 }
 
 -(id)objectForKey:(id)key{

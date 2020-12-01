@@ -10,6 +10,8 @@
 		943D823E257494A500EBEB95 /* UIColor+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 943D823D257494A500EBEB95 /* UIColor+Color.m */; };
 		943D840E2575216800EBEB95 /* DetailInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 943D840D2575216800EBEB95 /* DetailInformationView.m */; };
 		943D84132575217A00EBEB95 /* DetailInforamationMemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 943D84122575217A00EBEB95 /* DetailInforamationMemo.m */; };
+		943D842A2576A38400EBEB95 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 943D84292576A38400EBEB95 /* README.md */; };
+		943D842D2576A3A600EBEB95 /* BookStoreSearch.gif in Resources */ = {isa = PBXBuildFile; fileRef = 943D842C2576A3A600EBEB95 /* BookStoreSearch.gif */; };
 		94546095256E74740054BE9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94546094256E74740054BE9D /* AppDelegate.m */; };
 		9454609B256E74740054BE9D /* SeachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9454609A256E74740054BE9D /* SeachViewController.m */; };
 		945460A0256E74760054BE9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9454609F256E74760054BE9D /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		943D840D2575216800EBEB95 /* DetailInformationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailInformationView.m; sourceTree = "<group>"; };
 		943D84112575217A00EBEB95 /* DetailInforamationMemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailInforamationMemo.h; sourceTree = "<group>"; };
 		943D84122575217A00EBEB95 /* DetailInforamationMemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailInforamationMemo.m; sourceTree = "<group>"; };
+		943D84292576A38400EBEB95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		943D842C2576A3A600EBEB95 /* BookStoreSearch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BookStoreSearch.gif; sourceTree = "<group>"; };
 		94546090256E74740054BE9D /* SearchBookStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchBookStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94546093256E74740054BE9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		94546094256E74740054BE9D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 		94546087256E74740054BE9D = {
 			isa = PBXGroup;
 			children = (
+				943D842C2576A3A600EBEB95 /* BookStoreSearch.gif */,
+				943D84292576A38400EBEB95 /* README.md */,
 				94546092256E74740054BE9D /* SearchBookStore */,
 				94546091256E74740054BE9D /* Products */,
 			);
@@ -324,6 +330,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				943D842A2576A38400EBEB95 /* README.md in Resources */,
+				943D842D2576A3A600EBEB95 /* BookStoreSearch.gif in Resources */,
 				945460A3256E74760054BE9D /* LaunchScreen.storyboard in Resources */,
 				945460A0256E74760054BE9D /* Assets.xcassets in Resources */,
 			);
@@ -491,7 +499,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "JINHYEOK";
+				DEVELOPMENT_TEAM = JINHYEOK;
 				INFOPLIST_FILE = SearchBookStore/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -500,7 +508,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jang.jinhyeok.searchbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "JINHYEOK";
+				PROVISIONING_PROFILE_SPECIFIER = JINHYEOK;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -512,7 +520,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "JINHYEOK";
+				DEVELOPMENT_TEAM = JINHYEOK;
 				INFOPLIST_FILE = SearchBookStore/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -521,7 +529,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jang.jinhyeok.searchbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "JINHYEOK";
+				PROVISIONING_PROFILE_SPECIFIER = JINHYEOK;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
